@@ -4,19 +4,26 @@ const countwords = () => {
 	let noc  = document.getElementById('textArea').value.length;
 	let now = document.getElementById('textArea').value;
 	let now2 = document.getElementById('textArea').value;
+	let now1 = document.getElementById('textArea').value;
 
-	now = now.match(/\w+/g);
+
+	now = now.match(/\S+/g);
 	now = now.length;
 	console.log(now);
 
-	
 	now2 = now2.match(/[\w|\)][.?!](\s|$)/g);
-	now2 = now2.length
-	console.log(now2)
+	now2 = now2.length;
+	console.log(now2);
+
+	// now1 = now1.match(*?[0-9a-zA-Z] *?);
+	// now1 = now1.length;
+	// console.log(now1);
 	
 
-	document.getElementById('showWordsCount').innerHTML = "The total words: " + now;
-	document.getElementById('showSentencesCount').innerHTML = "The total sentences: " + now2;
+	document.getElementById('showWordsCount').innerHTML = "Word count: " + now;
+	document.getElementById('showSentencesCount').innerHTML = "Sentences count: " + now2;
+	// document.getElementById('showCharacterCount').innerHTML = "Character count: " + now1;
+
 }
 
 
